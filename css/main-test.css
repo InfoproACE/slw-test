@@ -69,3 +69,8 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+p#time {
+    font-weight: 900;
+    font-size: 20px;
+}
