@@ -8,10 +8,10 @@
             var status = document.getElementById("status");
 
             if (nameSubject.trim() === "") {
-                status.textContent = "ไม่มีการสอบ";
+                status.textContent = "(ไม่มีการสอบ)";
                 status.style.color = "red";
             } else {
-                status.textContent = "มีการสอบ";
+                status.textContent = "(มีการสอบ)";
                 status.style.color = "green";
             }
-        }, 7000); // หน่วงเวลา 7000 มิลลิวินาที (7 วินาที)
+        }, 5000); // หน่วงเวลา 7000 มิลลิวินาที (7 วินาที)
