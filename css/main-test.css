@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    gap: 30px;
   }
   .answer {
     width: 320px;
