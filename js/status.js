@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.querySelector("#nameSubject").addEventListener("input", checkExamStatus);
-    document.querySelector("#daySubject").addEventListener("input", checkExamStatus);
-    document.querySelector("#timeSubject").addEventListener("input", checkExamStatus);
+    document.querySelector("#nameSubject").addEventListener("span", checkExamStatus);
+    document.querySelector("#daySubject").addEventListener("span", checkExamStatus);
+    document.querySelector("#timeSubject").addEventListener("span", checkExamStatus);
 
     checkExamStatus(); // ตรวจสอบสถานะเริ่มต้นเมื่อโหลดหน้าเว็บ
 });
