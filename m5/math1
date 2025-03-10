@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบสอบออนไลน์</title>
+  <link rel="stylesheet" href="/css/main-test.css">
+</head>
+<body>
+  <div class="container">
+    <div class="exam">
+      <h2>ข้อสอบ</h2>
+      <div id="question-section">
+        <div class="question">
+          <p>1. คำถามที่ 1</p>
+          <div class="options">
+            <label><input type="radio" name="q1" value="A"> A. ตัวเลือก A</label>
+            <label><input type="radio" name="q1" value="B"> B. ตัวเลือก B</label>
+            <label><input type="radio" name="q1" value="C"> C. ตัวเลือก C</label>
+            <label><input type="radio" name="q1" value="D"> D. ตัวเลือก D</label>
+          </div>
+        </div>
+        <div class="question">
+          <p>2. คำถามที่ 2</p>
+          <textarea name="q2" placeholder="ระบายคำตอบที่นี่..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="answer">
+      <h2>กระดาษคำตอบ</h2>
+      <form id="answer-form">
+        <div>
+          <p>คำตอบข้อ 1: <input type="radio" name="answer1" value="A"> A <input type="radio" name="answer1" value="B"> B <input type="radio" name="answer1" value="C"> C <input type="radio" name="answer1" value="D"> D</p>
+        </div>
+        <div>
+          <p>คำตอบข้อ 2: <textarea name="answer2" placeholder="กรอกคำตอบ"></textarea></p>
+        </div>
+        <button type="submit">ส่งคำตอบ</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
