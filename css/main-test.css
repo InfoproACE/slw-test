@@ -87,3 +87,7 @@ table {
     text-align: center;
     align-items: center;
 }
+
+input[type="radio"] {
+    width: 30px;
+}
