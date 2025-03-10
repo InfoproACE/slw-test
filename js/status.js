@@ -1,27 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
     function checkExamStatus() {
-        const nameSubjectEl = document.querySelector("#nameSubject");
-        const daySubjectEl = document.querySelector("#daySubject");
-        const timeSubjectEl = document.querySelector("#timeSubject");
-        const status = document.querySelector("#status");
+        setTimeout(() => {
+            const nameSubjectEl = document.querySelector("#nameSubject");
+            const daySubjectEl = document.querySelector("#daySubject");
+            const timeSubjectEl = document.querySelector("#timeSubject");
+            const status = document.querySelector("#status");
 
-        if (!nameSubjectEl || !daySubjectEl || !timeSubjectEl || !status) {
-            console.error("ไม่พบ element ที่ต้องการใน DOM");
-            return;
-        }
+            if (!nameSubjectEl || !daySubjectEl || !timeSubjectEl || !status) {
+                console.error("ไม่พบ element ที่ต้องการใน DOM");
+                return;
+            }
 
-        // ใช้ textContent แทน value สำหรับ span
-        const nameSubject = nameSubjectEl.textContent.trim();
-        const daySubject = daySubjectEl.value?.trim(); // daySubject และ timeSubject ยังคงเป็น input
-        const timeSubject = timeSubjectEl.value?.trim();
+            // ใช้ textContent แทน value สำหรับ span
+            const nameSubject = nameSubjectEl.textContent.trim();
+            const daySubject = daySubjectEl.value?.trim(); // daySubject และ timeSubject ยังคงเป็น input
+            const timeSubject = timeSubjectEl.value?.trim();
 
-        if (!nameSubject || !daySubject || !timeSubject) {
-            status.textContent = "(ไม่มีการสอบ)";
-            status.style.color = "red";
-        } else {
-            status.textContent = "(มีการสอบ)";
-            status.style.color = "green";
-        }
+            if (!nameSubject || !daySubject || !timeSubject) {
+                status.textContent = "(ไม่มีการสอบ)";
+                status.style.color = "red";
+            } else {
+                status.textContent = "(มีการสอบ)";
+                status.style.color = "green";
+            }
+        }, 5000); // หน่วงเวลา 5 วินาทีก่อนตรวจสอบ
     }
 
     // ตรวจสอบเฉพาะ input ที่เปลี่ยนค่า
