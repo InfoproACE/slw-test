@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const timeSubject = timeSubjectEl.value?.trim();
 
         if (!nameSubject || !daySubject || !timeSubject) {
-            status.textContent = "ไม่มีการสอบ";
+            status.textContent = "(ไม่มีการสอบ)";
             status.style.color = "red";
         } else {
-            status.textContent = "มีการสอบ";
+            status.textContent = "(มีการสอบ)";
             status.style.color = "green";
         }
     }
