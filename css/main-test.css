@@ -81,3 +81,9 @@ p#time {
     font-weight: 900;
     font-size: 20px;
 }
+
+table {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
