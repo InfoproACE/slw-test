@@ -17,6 +17,9 @@ body {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 560px;
   }
   .exam{
     width: calc(100% - 400px);
