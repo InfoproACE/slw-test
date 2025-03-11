@@ -7,6 +7,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main-test.css">
   <script src="/js/clock.js"></script> 
+    <style>
+    table.table-2 {
+      width: 300px;
+      border-collapse: collapse;
+    }
+    .table-2 th, .table-2 td {
+      border: 1px solid black;
+      text-align: center;
+    }
+    .table-2 td{
+        width: calc(100% / 7);
+    }
+
+    .table-2 input[type="text"] {
+        width: 25px;
+        text-align: center;
+        border: none;
+        outline: none;
+        box-shadow: unset !important;
+    }
+    .table-2 input[type="radio"] {
+        accent-color: rgb(0, 0, 0);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -128,7 +152,7 @@
           </tbody>
         </table>
         <h3><b>ตอนที่ 2 แบบระบายคำตอบที่เป็นตัวเลือก</b></h3>
-        <table>
+        <table class="table-2">
           <thead>
             <tr>
               <th colspan="7">11</th>
@@ -149,7 +173,7 @@
               <td><input type="radio" name="answer11-2" value="0"></td>
               <td><input type="radio" name="answer11-3" value="0"></td>
               <td><input type="radio" name="answer11-4" value="0"></td>
-              <td  rowspan="10"></td>
+              <td rowspan="10"></td>
               <td><input type="radio" name="answer11-5" value="0"></td>
               <td><input type="radio" name="answer11-6" value="0"></td>
             </tr>
