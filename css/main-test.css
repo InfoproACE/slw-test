@@ -94,3 +94,38 @@ table {
 input[type="radio"] {
     width: 30px;
 }
+
+    table.table-2 {
+      width: 300px;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    .table-2 th, .table-2 td {
+      border: 1px solid black;
+      text-align: center;
+    }
+    .table-2 td{
+    }
+      
+    .table-2 input[type="radio"] {
+        margin: 0;
+    }
+      
+    .table-2 th {
+        width: 50% !important;
+        border: 2px solid;
+    }
+
+    .table-2 input[type="text"] {
+        width: 10px;
+        text-align: center;
+        border: none;
+        outline: none;
+        box-shadow: unset !important;
+    }
+    .table-2 input[type="radio"] {
+        accent-color: rgb(0, 0, 0);
+    }
+    input[type="radio"] {
+        width: unset !important;
+    }
