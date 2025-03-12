@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบสอบออนไลน์</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main-test.css">
+  <link rel="icon" href="https://slw-school.pages.dev/img/SLW.png">
+  <script src="/js/clock.js"></script> 
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://slw-school.pages.dev/img/SLW.png" height="50px">
+      <p>การสอบวิชาคณิตศาสตร์ ชั้น ม.5</p>
+    </div>
+    <div>
+      <p id="time"></p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="exam">
+      <h2>ข้อสอบ</h2>
+      <div id="question-section">
+        <iframe src="https://slw-pdf.pages.dev/math/5/[%E0%B8%8435101]%20%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%84.pdf" 
+                width="100%" height="500px" 
+                style="border: none;">
+        </iframe>
+      </div>
+    </div>
+    <div class="answer">
+      <h2>กระดาษคำตอบ</h2>
+      <form id="form" method="POST">
+        <div style="display: flex;gap: 10px;width: 50%;">
+          <div style=" display: grid; text-align: left; ">
+              <label for="discord">ชื่อนามสกุลนักเรียน</label>
+              <input style=" width: 130px; " type="text" id="discord" placeholder="นายจาตุรนต์ ฉายแสง" name="name" required="">
+          </div>
+          <div style=" display: grid; text-align: left; ">
+              <label for="idd">รหัสนักเรียน</label>
+              <input style=" width: 130px; " type="text" id="idd" placeholder="รหัสนักเรียน" name="id" required="">
+          </div>
+          <div style=" display: none ">
+              <label for="class">ชั้น</label>
+              <input style=" width: 130px; " type="text" id="class" value="ม.5/1 (ค35221)" name="class" required="">
+          </div>
+        </div>
+        <h3><b>ตอนที่ 1 แบบปรนัย 5 ตัวเลือก</b></h3>
+        <table>
+          <thead>
+              <tr>
+                <td>ข้อ</td>
+                <td>ก</td>
+                <td>ข</td>
+                <td>ค</td>
+                <td>ง</td>
+                <td>จ</td>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="radio" class="answer1" name="answer1" value="ก"></td>
+              <td><input type="radio" class="answer1" name="answer1" value="ข"></td>
+              <td><input type="radio" class="answer1" name="answer1" value="ค"></td>
+              <td><input type="radio" class="answer1" name="answer1" value="ง"></td>
+              <td><input type="radio" class="answer1" name="answer1" value="จ"></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="radio" class="answer2" name="answer2" value="ก"></td>
+              <td><input type="radio" class="answer2" name="answer2" value="ข"></td>
+              <td><input type="radio" class="answer2" name="answer2" value="ค"></td>
+              <td><input type="radio" class="answer2" name="answer2" value="ง"></td>
+              <td><input type="radio" class="answer2" name="answer2" value="จ"></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="radio" class="answer3" name="answer3" value="ก"></td>
+              <td><input type="radio" class="answer3" name="answer3" value="ข"></td>
+              <td><input type="radio" class="answer3" name="answer3" value="ค"></td>
+              <td><input type="radio" class="answer3" name="answer3" value="ง"></td>
+              <td><input type="radio" class="answer3" name="answer3" value="จ"></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><input type="radio" class="answer4" name="answer4" value="ก"></td>
+              <td><input type="radio" class="answer4" name="answer4" value="ข"></td>
+              <td><input type="radio" class="answer4" name="answer4" value="ค"></td>
+              <td><input type="radio" class="answer4" name="answer4" value="ง"></td>
+              <td><input type="radio" class="answer4" name="answer4" value="จ"></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><input type="radio" class="answer5" name="answer5" value="ก"></td>
+              <td><input type="radio" class="answer5" name="answer5" value="ข"></td>
+              <td><input type="radio" class="answer5" name="answer5" value="ค"></td>
+              <td><input type="radio" class="answer5" name="answer5" value="ง"></td>
+              <td><input type="radio" class="answer5" name="answer5" value="จ"></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><input type="radio" class="answer6" name="answer6" value="ก"></td>
+              <td><input type="radio" class="answer6" name="answer6" value="ข"></td>
+              <td><input type="radio" class="answer6" name="answer6" value="ค"></td>
+              <td><input type="radio" class="answer6" name="answer6" value="ง"></td>
+              <td><input type="radio" class="answer6" name="answer6" value="จ"></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><input type="radio" class="answer7" name="answer7" value="ก"></td>
+              <td><input type="radio" class="answer7" name="answer7" value="ข"></td>
+              <td><input type="radio" class="answer7" name="answer7" value="ค"></td>
+              <td><input type="radio" class="answer7" name="answer7" value="ง"></td>
+              <td><input type="radio" class="answer7" name="answer7" value="จ"></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><input type="radio" class="answer8" name="answer8" value="ก"></td>
+              <td><input type="radio" class="answer8" name="answer8" value="ข"></td>
+              <td><input type="radio" class="answer8" name="answer8" value="ค"></td>
+              <td><input type="radio" class="answer8" name="answer8" value="ง"></td>
+              <td><input type="radio" class="answer8" name="answer8" value="จ"></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><input type="radio" class="answer9" name="answer9" value="ก"></td>
+              <td><input type="radio" class="answer9" name="answer9" value="ข"></td>
+              <td><input type="radio" class="answer9" name="answer9" value="ค"></td>
+              <td><input type="radio" class="answer9" name="answer9" value="ง"></td>
+              <td><input type="radio" class="answer9" name="answer9" value="จ"></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><input type="radio" class="answer10" name="answer10" value="ก"></td>
+              <td><input type="radio" class="answer10" name="answer10" value="ข"></td>
+              <td><input type="radio" class="answer10" name="answer10" value="ค"></td>
+              <td><input type="radio" class="answer10" name="answer10" value="ง"></td>
+              <td><input type="radio" class="answer10" name="answer10" value="จ"></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3><b>ตอนที่ 2 แบบระบายคำตอบที่เป็นตัวเลือก</b></h3>
+        <table class="table-2">
+          <thead>
+            <tr>
+              <th colspan="7">11</th>
+              <th style=" width: 0% !important; "></th>
+              <th colspan="7">12</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" name="answer11-1"></td>
+              <td><input type="text" name="answer11-2"></td>
+              <td><input type="text" name="answer11-3"></td>
+              <td><input type="text" name="answer11-4"></td>
+              <td><b>.</b></td>
+              <td><input type="text" name="answer11-5"></td>
+              <td><input type="text" name="answer11-6"></td>
+              <td rowspan="11"></td>
+              <td><input type="text" name="answer12-1"></td>
+              <td><input type="text" name="answer12-2"></td>
+              <td><input type="text" name="answer12-3"></td>
+              <td><input type="text" name="answer12-4"></td>
+              <td><b>.</b></td>
+              <td><input type="text" name="answer12-5"></td>
+              <td><input type="text" name="answer12-6"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td rowspan="10"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td rowspan="10"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th colspan="7">13</th>
+              <th style=" width: 0% !important; "></th>
+              <th colspan="7">14</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" name="answer13-1"></td>
+              <td><input type="text" name="answer13-2"></td>
+              <td><input type="text" name="answer13-3"></td>
+              <td><input type="text" name="answer13-4"></td>
+              <td><b>.</b></td>
+              <td><input type="text" name="answer13-5"></td>
+              <td><input type="text" name="answer13-6"></td>
+              <td rowspan="11"></td>
+              <td><input type="text" name="answer14-1"></td>
+              <td><input type="text" name="answer14-2"></td>
+              <td><input type="text" name="answer14-3"></td>
+              <td><input type="text" name="answer14-4"></td>
+              <td><b>.</b></td>
+              <td><input type="text" name="answer14-5"></td>
+              <td><input type="text" name="answer14-6"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td rowspan="10"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td rowspan="10"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr>
+              <th colspan="7">15</th>
+              <th style=" width: 0% !important; "></th>
+              <th colspan="7"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" name="answer15-1"></td>
+              <td><input type="text" name="answer15-2"></td>
+              <td><input type="text" name="answer15-3"></td>
+              <td><input type="text" name="answer15-4"></td>
+              <td><b>.</b></td>
+              <td><input type="text" name="answer15-5"></td>
+              <td><input type="text" name="answer15-6"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+              <td rowspan="10"></td>
+              <td><input type="radio" value="0"></td>
+              <td><input type="radio" value="0"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+              <td><input type="radio" value="1"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+              <td><input type="radio" value="2"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+              <td><input type="radio" value="3"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+              <td><input type="radio" value="4"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+              <td><input type="radio" value="5"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+              <td><input type="radio" value="6"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+              <td><input type="radio" value="7"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+              <td><input type="radio" value="8"></td>
+            </tr>
+            <tr>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+              <td><input type="radio" value="9"></td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" type="submit" id="submit-button" class="btn btn-primary button is-primary">ส่งคำตอบ</button>
+        <button class="button is-danger" style="display:none;">Cancel</button>
+      </form>
+      <div id="message" style=" display: none; margin: 20px; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine; " ></div>
+    </div>
+  </div>
+  <script>
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("submit-button").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbxnAabMnHAifY34MppLIybPQd036sF2EjSRtqN6BxRjxz0-x0vt6XZPb8L5eH0kEKiX/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("message").textContent =
+              "Data submitted successfully!";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.backgroundColor = "green";
+            document.getElementById("message").style.color = "beige";
+            document.getElementById("submit-button").disabled = false;
+            document.getElementById("form").reset();
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+    </script>
+</body>
+</html>
