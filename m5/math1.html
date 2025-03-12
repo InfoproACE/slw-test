@@ -580,23 +580,37 @@
           </tbody>
         </table>
         <button type="submit"  name="submit" value="Send message" class="btn btn-primary">ส่งคำตอบ</button>
+        <p id="loading" style="display: none;">กำลังบันทึกข้อมูล...</p>
       </form>
     </div>
   </div>
+    <script>
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbySnXLAe2S8QS_ewR3MLaqqqiSoeIObsYFRPoFZr9oLW2Ik0v7BJmGIMr-d5UjJ51Qm/exec'; // แทนที่ YOUR_SCRIPT_ID ด้วย ID ของ Apps Script
+          const form = document.forms['hello-sheet'];
+          const submitButton = form.querySelector('button[type="submit"]');
+          const loadingText = document.getElementById("loading");
   
-  <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyfZfMqlzyBnJCwXMzWjF4IJdANjxamVr8Lo5YmWz8zJ7Iqdq6ENRoAEmtbmEiwzlry/exec'
-        const form = document.forms['hello-sheet']
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                alert("บันทึกข้อมูลเรียบร้อยแล้ว..");
-                window.location.href = "https://slw-test.pages.dev/dashboard"; 
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-    </script>
+          form.addEventListener('submit', e => {
+              e.preventDefault();
+              
+              submitButton.disabled = true;
+              loadingText.style.display = "block";
+  
+              fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                  .then(response => response.text())
+                  .then(data => {
+                      alert("บันทึกข้อมูลเรียบร้อยแล้ว: " + data);
+                      form.reset(); // เคลียร์ฟอร์มหลังจากบันทึกสำเร็จ
+                  })
+                  .catch(error => {
+                      console.error('Error!', error.message);
+                      alert("เกิดข้อผิดพลาด! กรุณาลองใหม่");
+                  })
+                  .finally(() => {
+                      submitButton.disabled = false;
+                      loadingText.style.display = "none";
+                  });
+          });
+      </script>
 </body>
 </html>
