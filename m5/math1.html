@@ -30,7 +30,7 @@
     </div>
     <div class="answer">
       <h2>กระดาษคำตอบ</h2>
-      <form id="answer-form" method="post" action="" name="send-form">
+      <form id="form" class="container m-4 pl-4" method="POST">
         <div style="display: flex;gap: 10px;width: 50%;">
           <div style=" display: grid; text-align: left; ">
               <label for="discord">ชื่อนามสกุลนักเรียน</label>
@@ -578,37 +578,71 @@
             </tr>
           </tbody>
         </table>
-        <button type="submit"  name="submit" value="Send message" class="btn btn-primary">ส่งคำตอบ</button>
-        <p id="loading" style="display: none;">กำลังบันทึกข้อมูล...</p>
+        <button type="submit" type="submit" id="submit-button" class="btn btn-primary button is-primary">ส่งคำตอบ</button>
+        <button class="button is-danger" style="display:none;">Cancel</button>
       </form>
+      <div id="message" style=" display: none; margin: 20px; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine; " ></div>
     </div>
   </div>
   <script>
-       const scriptURL = 'https://script.google.com/macros/s/AKfycbygq2jr4fUzQKBBVkIRRWmloge59dgz34lXyznak1aLPWSSDvTG_tN0LvT831LoRgAj/exec'
+      document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("submit-button").disabled = true;
 
-      const form = document.forms['send-form']
-      
-      form.addEventListener('submit', e => {
-        
-        e.preventDefault()
-        
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thank you! Form is submitted" ))
-        .then(() => { window.location.reload(); })
-        .catch(error => console.error('Error!', error.message))
-      })
-    </script>
-  <script>
-    // ฟังการเลือก radio button ของแต่ละกลุ่ม
-    for (let i = 1; i <= 10; i++) {
-      const radios = document.querySelectorAll(`.answer${i}`);
-      radios.forEach(radio => {
-        radio.addEventListener('change', function() {
-          // เมื่อเลือก radio button จะนำค่ามาใส่ใน input ที่ตรงกับ id
-          document.getElementById(`answer${i}`).value = this.value;
-        });
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbxnAabMnHAifY34MppLIybPQd036sF2EjSRtqN6BxRjxz0-x0vt6XZPb8L5eH0kEKiX/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("message").textContent =
+              "Data submitted successfully!";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.backgroundColor = "green";
+            document.getElementById("message").style.color = "beige";
+            document.getElementById("submit-button").disabled = false;
+            document.getElementById("form").reset();
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
       });
-    }
-  </script>
+    </script>
 </body>
 </html>
