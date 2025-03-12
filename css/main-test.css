@@ -95,6 +95,9 @@ input[type="radio"] {
     width: 30px;
 }
 
+input[type="radio"] {
+    accent-color: rgb(0, 0, 0);
+}
     table.table-2 {
       width: 300px;
       border-collapse: collapse;
