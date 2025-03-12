@@ -30,7 +30,7 @@
     </div>
     <div class="answer">
       <h2>กระดาษคำตอบ</h2>
-      <form id="answer-form" method="post" autocomplete="off" name="hello-sheet">
+      <form id="answer-form" method="post" action="" name="send-form">
         <div style="display: flex;gap: 10px;width: 50%;">
           <div style=" display: grid; text-align: left; ">
               <label for="discord">ชื่อนามสกุลนักเรียน</label>
@@ -594,18 +594,19 @@
     </div>
   </div>
   <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwB8YvGM6GqF0-e5Bc5xVuyB9PFAbjbEZCaS4B3W_FYQiea8kwBLz-NoL4Av-PEpYj0/exec'
-        const form = document.forms['hello-sheet']
+       const scriptURL = 'https://script.google.com/macros/s/AKfycbygq2jr4fUzQKBBVkIRRWmloge59dgz34lXyznak1aLPWSSDvTG_tN0LvT831LoRgAj/exec'
+
+      const form = document.forms['send-form']
       
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                alert("บันทึกข้อมูลเรียบร้อยแล้ว..");
-                window.location.href = "https://slw-test.pages.dev/dashboard"; // Redirect to login page
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
+      form.addEventListener('submit', e => {
+        
+        e.preventDefault()
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank you! Form is submitted" ))
+        .then(() => { window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+      })
     </script>
   <script>
     // ฟังการเลือก radio button ของแต่ละกลุ่ม
